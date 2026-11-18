@@ -38,7 +38,7 @@ def predecir(valores):
 def main():
     st.set_page_config(page_title="Riesgo de bajo peso al nacer", page_icon="👶")
     st.title("Riesgo de bajo peso al nacer")
-    st.caption("Herramienta de apoyo para priorizar seguimiento prenatal. No es un diagnóstico.")
+    st.caption("Modelo de apoyo predictivo, no reemplaza el criterio médico")
 
     valores = {}
     izq, der = st.columns(2)
@@ -60,11 +60,11 @@ def main():
         st.metric("Probabilidad estimada de bajo peso", f"{p:.1%}")
         if alerta:
             st.warning(f"ALERTA: la probabilidad supera el umbral de decisión ({UMBRAL:.2f}). "
-                       "Conviene priorizar el seguimiento de esta gestación.")
+                       "El bebé puede presentar bajo peso al nacer.")
         else:
             st.success(f"Por debajo del umbral de decisión ({UMBRAL:.2f}). No se genera alerta.")
-        st.caption("El umbral es bajo a propósito: se prefiere detectar más casos de riesgo aunque haya falsas alarmas. "
-                   "El modelo muestra asociaciones, no causalidad, y se entrenó con datos de un solo hospital.")
+        st.caption("El umbral es bajo a propósito, preferimos detectar casos de riesgo aunque no lo sean. "
+                   "El modelo muestra asociaciones, no causalidad, se recomineda consultar con un profesional.")
 
 
 if __name__ == "__main__":
