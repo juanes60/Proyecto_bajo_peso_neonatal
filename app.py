@@ -62,7 +62,7 @@ def main():
             st.warning(f"ALERTA: la probabilidad supera el umbral de decisión ({UMBRAL:.2f}). "
                        "El bebé puede presentar bajo peso al nacer.")
         else:
-            st.success(f"Por debajo del umbral de decisión ({UMBRAL:.2f}). No se genera alerta.")
+            st.success(f"Por debajo del umbral de decisión ({UMBRAL:.2f}). No se genera alerta de bajo peso.")
         st.caption("El umbral es bajo a propósito, preferimos detectar casos de riesgo aunque no lo sean. "
                    "El modelo muestra asociaciones, no causalidad, se recomineda consultar con un profesional.")
 
